@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>project 3&4</title>
+
+  </head>
+<body>
+    <fieldset class="datagrid">
+    <h1 style="color:blue;">Cloud Computing</h1>
+    </fieldset>
+    </br>
+
+    <h2> uploading a file from local to s3(bucket)</h2>
+    <form method="post" action="/loads3" enctype="multipart/form-data">
+        <input type="file" name="file[]" multiple>
+        <input type="submit">
+       <!-- <input type="hidden" name="totaltime" value={{ session['total_time'] }}>-->
+       <h4>total time= {{ session['total_time'] }} sec..</h4>
+    </form>
+
+    <form method="post" action="/display"enctype="multipart/form-data">
+        <input type="submit" name="display" value="diaplay">
+    </form>
+
+
+    <h2> uploading a file from local csv to rds</h2>
+    <form method="POST" action="/upload" enctype="multipart/form-data">
+        <input type="file" name="file" multiple>
+        <input type="submit" name="upload" value="upload">
+        <!--<h4>total time= {{ (session['total_time'])/60 }} min..</h4>-->
+        <h4>total time= {{ (session['total_time']) }} sec..</h4>
+
+
+    <h2> uploading a file from s3 to rds</h2>
+    <form method="POST" action="/uploadsetords" enctype="multipart/form-data">
+        <!--<input type="file" name="file" multiple>-->
+        <input type="submit" name="uploadsetords" value="upload">
+        <!--<h4>total time= {{ (session['total_time']) }} sec..</h4>-->
+    </form>
+</body>
+</html>
